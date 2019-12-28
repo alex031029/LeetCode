@@ -6,6 +6,18 @@
 #include <cmath>
 using namespace std;
 
+// I was not very familiar with error and exception handler before this question.
+// a try block can be followed by several catch block, each of which is nominated for a certain type of error
+// catch(...) is set as the default handler to handle all non-specified errors.
+// usually error types from std::exception should be used as a reference &
+
+
+// The class severs has all its members as static 
+// Thus, we have to use the scope operator :: to invoke the static function as well as static variables.
+// These static members does not need an object to be invoked or calculated. 
+
+
+
 class Server {
 private:
 	static int load;
