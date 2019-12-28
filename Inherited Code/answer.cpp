@@ -7,6 +7,9 @@ using namespace std;
 
 /* Define the exception here */
 
+// I herited the badLengthException from std::exception
+// But it can be a simpler version that does not herited from std::exception
+// the std::exception.what() is a virtual function that can be overridden.
 class BadLengthException: public exception
 {
     public:
