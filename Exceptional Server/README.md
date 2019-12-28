@@ -1,3 +1,6 @@
+https://www.hackerrank.com/challenges/exceptional-server/problem
+
+
 Your friend set up a small computational server that performs complex calculations. 
 It has a function that takes  large numbers as its input and returns a numeric result. Unfortunately, there are various exceptions that may occur during execution.
 Complete the code in your editor so that it prints appropriate error messages, should anything go wrong. The expected behavior is defined as follows:
