@@ -31,7 +31,9 @@ class Cache{
 class LRUCache:Cache
 {
     public:
+    // the key of the first value of the linked map;
     int first = -1;
+    // retrieve the last node of the cache;
     Node * lastNode()
     {
         if(first == -1)
@@ -47,12 +49,14 @@ class LRUCache:Cache
         }
         return ret;
     }
+    // retrieve the first node of the cache;
     Node * firstNode()
     {
         if(first == -1)
             return NULL;
         return mp[first];
     }
+    // print all elements of the cache (i.e., map) in order
     void printMap(int key=-1, int value=-1)
     {
         if(first == -1)
@@ -68,14 +72,17 @@ class LRUCache:Cache
         }
         cout<<"end print"<<endl;
     }
+    // insert a new element or rearrange the map
     void set(int key, int value)
     {
+        // case 1: the map is empty
         if(mp.empty())
         {
             Node * temp = new Node(key, value);
             mp[key]=temp;
             first = key;
         }
+        // case 2: the map still have vacancy;
         else if(mp.size()<cp)
         {
             Node * next = firstNode();
@@ -84,8 +91,10 @@ class LRUCache:Cache
             mp[key]=temp;
             first = key;
         }
+        // case 3: no more vacancy in the map
         else
         {
+            // case 3.1: the element is new
             if(get(key)==-1)
             {
                 Node * last = lastNode();
@@ -96,6 +105,7 @@ class LRUCache:Cache
                 mp[key]=temp;
                 first =key;
             }
+            // case 3.2: the element exists in the map
             else
             {
                 firstNode()->prev = mp[key];
