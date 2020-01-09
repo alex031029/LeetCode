@@ -22,9 +22,12 @@ public:
             }
             // adjust ret value
             ret = max(ret,j-i);
+            // an early termination if j has reached the end of s
+            if(j==s.size())
+                break;
             // cout<<i<<j<<ret<<endl;
-            // i is set to this repeating character, or simply i+1
-            i=max(hash[s[j]],i+1);
+            // i is set to the index of this repeating character + 1
+            i=hash[s[j]]+1;
         }
         return ret;
 
