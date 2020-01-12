@@ -1,3 +1,6 @@
+// this implementation is obsolete 
+// LRU Cache is more detailed
+
 #include <iostream>
 #include <vector>
 #include <map>
