@@ -1,6 +1,6 @@
 // this program is to find out the longest common subsequence of two strings
 // using DP to yield the result
-// the state transfer function is set as the max(dp[i-1][j-1]+(s1[i-1]==s[j-1]), dp[i-1][j], dp[i][j-1])
+// the state transition function is set as the max(dp[i-1][j-1]+(s1[i-1]==s[j-1]), dp[i-1][j], dp[i][j-1])
 // note that the length of either dimension of dp[][] is 1 larger than the length of s1 or s2, respectively
 // it is due to the basic case is comparing s1 (or s2) with a trivial empty string "";
 
