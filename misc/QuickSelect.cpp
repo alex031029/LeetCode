@@ -1,3 +1,7 @@
+// the question is to find the k-th largest number in time complexity of O(n)
+// heap solution may yield an O(nlog n) soluton in cases like k = n
+// this program implements a quick sort algorithm
+
 // I have found out the bug!
 // Thanks for your time and consideration!
 
