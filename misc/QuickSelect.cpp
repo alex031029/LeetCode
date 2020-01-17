@@ -66,6 +66,6 @@ int quickSelect(int nums[], int l, int r)
 
 int main()
 {
-    int nums[] = {5,4,3,1,6,8};
-    cout<<kthLargestNumber(nums, 0, 5, 5)<<endl;
+    int nums[] = {3,2,1,5,6,4};
+    cout<<kthLargestNumber(nums, 0, 5, 2)<<endl;
 }
