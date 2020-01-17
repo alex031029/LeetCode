@@ -39,7 +39,7 @@ Output Format
 
 The code provided in the editor will use your derived class LRUCache to output the value whenever a get command is encountered.
 
-     Sample Input
+Sample Input
 
      3 1
 
@@ -49,7 +49,7 @@ The code provided in the editor will use your derived class LRUCache to output t
 
      get 2
 
-     Sample Output
+Sample Output
 
      2
 
