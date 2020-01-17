@@ -9,8 +9,8 @@ Example 1:
 Input: [3,2,3,1,2,4,5,5,6] and k = 4
 
     Output: 4
-    Note: 
-    You may assume k is always valid, 1 ≤ k ≤ array's length.
+Note: 
+You may assume k is always valid, 1 ≤ k ≤ array's length.
 
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/kth-largest-element-in-an-array
