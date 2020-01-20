@@ -20,6 +20,7 @@ public:
     }    
     
     // an alternate solution with smaller space overheads
+    // it has an identical code as a greedy solution
     int maxSubArray2(vector<int>& nums) {
         if(nums.empty())
             return 0;
