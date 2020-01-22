@@ -6,7 +6,8 @@
 class Solution {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-        // nums1.insert(nums1.end(), nums2.begin(), nums2.end());
+        // lengthen nums1 if the size is not long enough
+        // nums1.insert(nums1.end(), nums2.begin(), nums2.end()); 
         int p = m+n-1;
         int i = m-1, j = n-1;
 
