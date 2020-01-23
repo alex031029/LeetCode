@@ -1,5 +1,6 @@
 // a naive O(n^2) solution
-
+// it iteratively enumerates all possible combination of buying and selling dates
+// and returns the maxmimum among all above combinations
 
 class Solution {
 public:
