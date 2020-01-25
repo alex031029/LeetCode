@@ -15,23 +15,32 @@ public:
         {'t','u','v'},
         {'w','x','y','z'}
     };
+    
+    // main function
     vector<string> letterCombinations(string digits) {
 
 
         vector<string> ret;
         if(digits.empty())
             return ret; 
-        // cout<<phoneKeyboard[9].size()<<endl;
+        
+        // add the digits[0] to ret
         for(int i=0;i<phoneKeyboard[digits[0]-'0'].size();i++)
         {
             ret.push_back(string(1,phoneKeyboard[digits[0]-'0'][i]));
         }
-
+        
+        // traverse all letters in digits
         for(int i=1;i<digits.size();i++)
         {
+            // v is for the index of phoneKeyboard
             int v = digits[i]-'0';
+            
+            // we copy the current value of ret, and clear it
             vector<string> temp = ret;
             ret.clear();
+            
+            // add all combinaion of elements from temp and letters corresponding to digit[i]
             for(int j=0;j<temp.size();j++)
             {
                 for(int t=0;t<phoneKeyboard[v].size();t++)
