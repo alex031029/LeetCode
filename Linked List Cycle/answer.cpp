@@ -1,3 +1,10 @@
+// An O(1) space solution
+// the basic idea is to use two pointers, a fast one and a slow one
+// the fast one moves two node for each iteration, 
+// and the slow one moves only one node
+// if these two pointers are referring to a same node at a certain time, it means the list has a cycle
+// if the fast pointer refers to NULL, it means there is no cycle
+
 /**
  * Definition for singly-linked list.
  * struct ListNode {
