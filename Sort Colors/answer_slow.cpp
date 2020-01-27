@@ -1,3 +1,11 @@
+// although the file name is answer_slow
+// it pass all test cases in 0 ms, ahaed of 100% of all submissions
+
+// two-traversal solution
+// use a counting sort to traverse the input nums for the first time
+// then rewrite nums
+
+
 class Solution {
 public:
     void sortColors(vector<int>& nums) {
