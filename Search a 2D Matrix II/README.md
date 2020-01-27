@@ -2,6 +2,7 @@ Write an efficient algorithm that searches for a value in an m x n matrix. This 
 
 * Integers in each row are sorted in ascending from left to right.
 * Integers in each column are sorted in ascending from top to bottom.
+
 Example:
 
 Consider the following matrix:
