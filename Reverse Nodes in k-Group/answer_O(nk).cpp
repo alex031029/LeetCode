@@ -1,5 +1,5 @@
 // An O(1) space solution
-// but it is a two-pass method
+// but its average time complexity is O(kn), with best case as O(n) and worse case O(n^2)
 
 /**
  * Definition for singly-linked list.
