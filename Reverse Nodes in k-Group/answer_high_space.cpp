@@ -1,5 +1,7 @@
 // a solution with O(k) space complexity
 // the basic idea is to use a stack of k-size
+// the time complexity is O(k*n) on average. 
+// the worst case is O(n^2) and the best case is O(n)
 
 /**
  * Definition for singly-linked list.
