@@ -1,3 +1,6 @@
+// it is a solution using O(n) space 
+// it utilizes a stack to store all nodes in the list
+
 /**
  * Definition for singly-linked list.
  * struct ListNode {
