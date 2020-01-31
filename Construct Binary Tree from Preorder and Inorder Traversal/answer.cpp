@@ -1,3 +1,8 @@
+// I use a recursive approach to handle this problem
+// the basic idea is that, for each preorder, the first node must be the root
+// and by utilizing inorder, we can find nodes for the left subtree and right subtree
+// it call the function recursively to build the tree
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
