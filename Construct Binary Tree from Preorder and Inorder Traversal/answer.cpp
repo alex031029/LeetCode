@@ -26,7 +26,11 @@ public:
             if(inorder[i] == preorder[l1])
                 break;
         }
+        // the left tree 
         TreeNode * left = helper(preorder, l1+1, r1, inorder, l2, i-1);
+        
+        // the right tree. here l1+1+i-l2 indicates the index of the root of the right subtree
+        // it is calculated as l1+1 (i.e., the root of left subtree) plus (i-l2) (i.e., the size of left tree)
         TreeNode * right = helper(preorder, l1+1+i-l2, r1, inorder, i+1, r2);
         root->left = left;
         root->right = right;
