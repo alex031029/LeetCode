@@ -1,3 +1,8 @@
+// the basic idea is similar to construct the tree using preoder and inorder
+// the lastest element of the postorder must be the root of the tree
+// and we can using inorder to find two subtrees given the root
+// then we can construct the tree recursively 
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -7,6 +12,7 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
 class Solution {
 public:
     TreeNode* helper(vector<int>& postorder, int l1, int r1, vector<int>& inorder, int l2, int r2)
@@ -21,6 +27,7 @@ public:
             if(inorder[i] == postorder[r1])
                 break;
         }
+        // r1-1-(r2-i) indicates the index of the root of the left tree
         TreeNode * left = helper(postorder, l1, r1-1-(r2-i), inorder, l2, i-1);
         TreeNode * right = helper(postorder, l1, r1-1, inorder, i+1, r2);
         root->left = left;
