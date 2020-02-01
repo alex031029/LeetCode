@@ -7,8 +7,8 @@ public:
     string encode(string s)
     {
         string ret;
-        char hash[26];
-        memset(hash, 0, 26*sizeof(char));
+        int hash[26];
+        memset(hash, 0, 26*sizeof(int));
         for(int i=0;i<s.length();i++)
         {
             hash[s[i]-'a']++;
