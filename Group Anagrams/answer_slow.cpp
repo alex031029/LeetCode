@@ -2,6 +2,8 @@
 
 class Solution {
 public:
+    // encode the input string. 
+    // Any anagram has identical output
     string encode(string s)
     {
         string ret;
@@ -23,11 +25,13 @@ public:
         if(strs.empty())
             return ret;
 
+        // the classifier record each encoded string to indentify anagrams
         map<string, vector<int>> classifier;
         for(int i=0;i<strs.size();i++)
         {
             classifier[encode(strs[i])].push_back(i);
         }
+        // traverse classifier
         for(auto iter = classifier.begin();iter!=classifier.end();iter++)
         {
             vector<string> temp;
