@@ -15,11 +15,11 @@ public:
         }
         for(int i = offset+1;i<size;i++)
         {
-            swap(matrix[i][offset],matrix[matrix.size()-1-offset][i]);
+            swap(matrix[i][offset],matrix[size-1][i]);
         }
         for(int i = offset+1;i<size-1;i++)
         {
-            swap(matrix[matrix.size()-1-offset][i],matrix[matrix.size()-1-i][matrix.size()-1-offset]);
+            swap(matrix[size-1][i],matrix[matrix.size()-1-i][size-1]);
         }
         // for(int i = matrix.size()-2-offset;i>=offset;i--)
         // {
