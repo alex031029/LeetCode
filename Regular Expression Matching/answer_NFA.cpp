@@ -1,4 +1,6 @@
 // an NFA solution with some early termination optimizations
+// the optimizations can return a false by some coarse determination functions 
+// withouth these optimizations, this code cannot be accepted by LeetCode due to time limit
 
 class Solution {
 public:
@@ -7,13 +9,18 @@ public:
         // the accepted char
         char c;
         // the transition function.
+        // since it is an NFA solution
+        // given a states and a input char c, the possible next states can be multiple
         map<char, vector<state*>> next;
+        // if it is an end state
         bool end = false;
         state(char x)
         {
             c = x;
         }
     };
+    // generate the NFA for p
+    // offset is not implemented yet
     state * constructStates(string p, int offset)
     {
         state * head = new state('#');
@@ -23,6 +30,9 @@ public:
             return head;
         for(int i=offset;i<p.size();i++)
         {
+            // the '$' is used as epsilon in NFA
+            // when p[i] is *, we first add an edge pointing to itself
+            // then add an epsilon edge from the previous state to the current one
             if(p[i]=='*')
             {
                 cur->next[cur->c].push_back(cur);
@@ -31,18 +41,16 @@ public:
             else
             {
                 state * st = new state(p[i]);
-                // if(cur->next.find(p[i])==cur->next.end())
-                //     cur->next[p[i]] = st;
-                // else
-                //     cur->next[p[i]-'a'+'A'] = st;
                 cur->next[p[i]].push_back(st);
                 prev = cur;
                 cur = st;
             }    
         }
+        // only the last state can be accepted
         cur->end = true;
         return head;
     }
+    // helper is called recursively to find if there exists an path return true
     bool helper(string s, state * cur, int offset)
     {
         // cout<<offset<<cur->c<<cur->end<<endl;
@@ -50,6 +58,7 @@ public:
             return true;
         if(offset>=s.size())
         {
+            // iff offset = s.size, it is possible that there exists an epsilon path pointing to the end
             if(cur->next.find('$')!=cur->next.end())
             {
                 auto next = cur->next['$'];
@@ -62,8 +71,9 @@ public:
             }
             return false;
         }
-            
+        
         int i = offset;
+        // case 1: s[i] is a normal char
         if(cur->next.find(s[i])!=cur->next.end())
         {
             auto next = cur->next[s[i]];
@@ -74,6 +84,8 @@ public:
                     return true;
             }
         }
+        
+        // case 2: s[i] is wild card .
         if(cur->next.find('.')!=cur->next.end())
         {
             auto next = cur->next['.'];
@@ -84,6 +96,7 @@ public:
                     return true;
             }
         }
+        // case 3: s[i] has epsilon edge
         if(cur->next.find('$')!=cur->next.end())
         {
             auto next = cur->next['$'];
@@ -96,6 +109,9 @@ public:
         }
         return false;
     }
+    
+    // an early termination
+    // check if p has corresponding letter for lettes in s
     bool quickFalse1(string s, string p) 
     {
         sort(s.begin(),s.end());
@@ -120,6 +136,9 @@ public:
             return false;
         return true;
     }
+    
+    // an early determination 
+    // from the ends of s and p, if each letter are corresponding (without considering *)
     bool quickFalse2(string s, string p)
     {
         int i=s.size()-1, j=p.size()-1;
