@@ -1,4 +1,4 @@
-// an O(n) time and O(1) space solution
+// an O(n+m) time and O(1) space solution
 // we use two pointer to traverse the lists
 // p1 traverses from headA, and shifts to headB when reaching NULL
 // p2 shifts to headA hwne reaching NULL
