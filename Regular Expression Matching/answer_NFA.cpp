@@ -1,9 +1,12 @@
-// an FSA solution with some early termination optimizations
+// an NFA solution with some early termination optimizations
 
 class Solution {
 public:
+    // state
     struct state{
+        // the accepted char
         char c;
+        // the transition function.
         map<char, vector<state*>> next;
         bool end = false;
         state(char x)
