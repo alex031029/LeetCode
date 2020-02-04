@@ -1,3 +1,11 @@
+// an O(n) time and O(1) space solution
+// we use two pointer to traverse the lists
+// p1 traverses from headA, and shifts to headB when reaching NULL
+// p2 shifts to headA hwne reaching NULL
+// in this manner, two pointers are equally traverse list A+B, 
+// and they will meet at some time if there has an intersecion
+// if there is no intersection, p1 cannot meet p2 before reaching two NULL pointers
+
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -13,6 +21,7 @@ public:
             return NULL;
         if(headA==headB)
             return headA;
+        
         ListNode * p1 = headA;
         ListNode * p2 = headB;
         int cnt = 0;
