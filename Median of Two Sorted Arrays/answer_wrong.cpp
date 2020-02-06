@@ -8,17 +8,17 @@ public:
         while(1)
         {
             cout<<k<<p1<<p2<<endl;
-            int i = min(int(nums1.size()-1), p1+(k-1)/2);
-            int j = min(int(nums2.size()-1), p2+(k-1)/2);
+            int i = min(int(nums1.size()-1), p1+k/2);
+            int j = min(int(nums2.size()-1), p2+k/2);
             if(nums1[i]<nums2[j])
             {
                 p1 = i;
-                k = k - p1;
+                k = k - k/2;
             }
             else
             {
                 p2 = j;
-                k = k - p2;
+                k = k - k/2;
             }
             if(k<=1||p1==nums1.size()-1||p2==nums2.size()-1)
                 break;
