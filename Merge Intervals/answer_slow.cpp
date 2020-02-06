@@ -1,3 +1,5 @@
+// an O(n log n) solution
+
 class Solution {
 public:
 
@@ -9,9 +11,13 @@ public:
         if(intervals.size()<=1)
             return intervals;
 
+        // sort intervals according to the first element of intervals
         sort(intervals.begin(), intervals.end(),comparator);
+        
         vector<vector<int>> ret;
         auto prev = intervals[0];
+        
+        // merge intervals
         for(int i=1;i<intervals.size();i++)
         {
             if(intervals[i][0]>prev[1])
