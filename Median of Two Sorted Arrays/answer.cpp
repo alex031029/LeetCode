@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+    // for the odd case
     double helperOdd(vector<int>& nums1, vector<int>& nums2, int left, int right, int k)
     {
         cout<<left<<right<<k<<endl;
@@ -33,6 +34,8 @@ public:
             return helperOdd(nums1, nums2, left, j+1, k-(j-right+1));
         }
     }
+    
+    // the even case
     double helperEven(vector<int>& nums1, vector<int>& nums2, int left, int right, int k)
     {
         cout<<left<<right<<k<<endl;
@@ -46,6 +49,8 @@ public:
             cout<<"case 2"<<endl;
             return double(nums1[left+k-1]+nums1[left+k])/2;
         }
+        // when k<=1, the k-th and (k+1)-th smallest number can be 
+        // from nums1[left] or [left+1], nums2[right] or [right+1]
         if(k <= 1)
         {
             cout<<"case 3"<<endl;
