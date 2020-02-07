@@ -8,6 +8,7 @@ public:
     bool exist(int hashs[], int hasht[])
     {
         bool ret = true;
+        // for(int i=65;i<123;i++)  // we could optimize the time if we assure all chars are letters
         for(int i=0;i<256;i++)
         {
             ret = ret&&(hasht[i]<=hashs[i]);
