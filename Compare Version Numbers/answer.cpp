@@ -2,13 +2,17 @@
 
 class Solution {
 public:
-    // it 
+    // it return the a sub version number from version[left]
     int toVersion(string& version, int& left)
     {
+        // 0 as default result
         if(left>=version.size())
             return 0;
+        
         int pos = version.find('.', left);
         // cout<<version.substr(left, pos - left);
+        
+        // if the sub version is last version number
         if(pos>=version.size())
         {
             int ret = stoi(version.substr(left), NULL);
@@ -26,6 +30,7 @@ public:
     int compareVersion(string version1, string version2) {
         int l1 = 0;
         int l2 = 0;
+        // the loop terminates when both version numbers have been fully traversed
         while(l1<version1.size()||l2<version2.size())
         {
             // cout<<l1<<l2<<endl;   
