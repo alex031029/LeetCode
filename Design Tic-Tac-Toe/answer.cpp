@@ -1,13 +1,15 @@
-
 class TicTacToe {
 public:
     /** Initialize your data structure here. */
-    vector<vector<int>> board;
+    // no need to store the board
+    // vector<vector<int>> board;
+    
+    // these variables stores the sum of horizontal, vertical and diagonal elements
     vector<int> ifWinHorizontal;
     vector<int> ifWinVertical;
     vector<int> ifWinDiagonal;
     TicTacToe(int n) {
-        board = vector<vector<int>>(n, vector<int>(n, ' '));
+        // board = vector<vector<int>>(n, vector<int>(n, ' '));
         ifWinHorizontal = vector<int>(n, 0);
         ifWinVertical = vector<int>(n, 0);
         ifWinDiagonal = vector<int>(2, 0);
@@ -30,10 +32,13 @@ public:
         
         if(row == col)
             ifWinDiagonal[0] += player;
-        if(row + col == board.size()-1)
+        
+        // the other diagonal line 
+        // note that the row + col = n - 1 here 
+        if(row + col == ifWinHorizontal.size()-1)
             ifWinDiagonal[1] += player;
 
-        int n = board.size()*player;
+        int n = ifWinHorizontal.size()*player;
         if(ifWinHorizontal[row]==n||ifWinVertical[col]==n||ifWinDiagonal[0]==n||ifWinDiagonal[1]==n)
             return player == -1?2:1;
         return 0;
