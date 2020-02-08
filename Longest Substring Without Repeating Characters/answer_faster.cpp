@@ -1,3 +1,6 @@
+// a sliding window method 
+// each time the window contains repeating characters, the window shrinks
+
 class Solution {
 public:
     // the basic idea is similar to the slow version
