@@ -1,3 +1,5 @@
+// two-stack solution
+
 class MinStack {
 public:
     /** initialize your data structure here. */
@@ -7,6 +9,7 @@ public:
         
     }
     
+    // when q2.top()>=x, we push x into push q1 and q2
     void push(int x) {
         if(q1.empty())
         {    
@@ -24,6 +27,8 @@ public:
         }
     }
     
+    // if the top elements of q1 and q2 are equal
+    // we pop both elements
     void pop() {
         if(q1.top()==q2.top())
         {
