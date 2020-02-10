@@ -14,6 +14,8 @@ public:
             reverse(s.begin()+prev,s.begin()+pos);
             prev = pos+1;
         }
+        
+        // DO NOT forget to reverse the last word
         reverse(s.begin()+prev, s.end());
         return s;
     }
