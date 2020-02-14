@@ -7,35 +7,36 @@ public:
     int minimumTotal(vector<vector<int>>& triangle) {
         if(triangle.empty())
             return 0;
+        
+        if(triangle.size()==1)
+            return triangle[0][0];
 
         int n = triangle.size();
         int dp[n][n];
 
         dp[0][0] = triangle[0][0];
 
-        // the leftmost path
-        for(int i=1;i<n;i++)
-        {
-            dp[i][0]=triangle[i][0]+dp[i-1][0];
-        }
         int ret = INT_MAX;
         for(int i=1;i<n;i++)
         {
-            for(int j=1;j<=i;j++)
+            for(int j=0;j<=i;j++)
             {
-                if(j<=i-1)
+                // consider the leftmost path and rightmost path
+                if(j==0)
+                    dp[i][j] = dp[i-1][j]+triangle[i][j];
+                else if(j<=i-1)
                     dp[i][j] = min(dp[i-1][j-1],dp[i-1][j])+triangle[i][j];
                 else
                     dp[i][j] = dp[i-1][j-1]+triangle[i][j];
                 // cout<<dp[i][j]<<"\t";
                 
-                // update ret when calculating the last row
+                // update ret for the last row
                 if(i==n-1&&dp[i][j]<ret)
                     ret = dp[i][j];
             }
             // cout<<endl;
         }
 
-        return min(ret, dp[n-1][0]);
+        return ret;
     }
 };
