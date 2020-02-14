@@ -1,3 +1,7 @@
+// this solution uses answer.cpp of Largest Rectangle in Histogram 
+// for each line, we contruct a histrogram, and find the largest rectangle
+
+
 class Solution {
 public:
     int largestRectangleArea(vector<int>& heights) { 
@@ -30,10 +34,12 @@ public:
     int maximalRectangle(vector<vector<char>>& matrix) {
         if(matrix.empty())
             return 0;
+        
         vector<int> heights(matrix[0].size()+2, 0);
         int ret = 0;
         for(int i=0;i<matrix.size();i++)
         {
+            // construct the histogram
             for(int j=0;j<matrix[0].size();j++)
             {
                 heights[j+1] = matrix[i][j]=='0'?0:heights[j+1]+1;
