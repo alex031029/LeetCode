@@ -1,3 +1,7 @@
+// O(1) time for both get and put operation
+// the basic idea is to use double linked list to implement the LRU cache
+// and an unordered_map is set to retrieve the key in O(1) time
+
 class LRUCache {
     struct Node{
         Node* next;
@@ -10,11 +14,12 @@ class LRUCache {
     
 
 public:
-   map<int,Node*> mp; //map the key to the node in the linked list
+   unordered_map<int,Node*> mp; //map the key to the node in the linked list
    int cp;  //capacity
    Node* tail; // double linked list tail pointer
    Node* head; // double linked list head pointer
 
+    // add the node in the first place
     void addFirst(Node * n)
     {
         n->next = head->next;
@@ -23,12 +28,16 @@ public:
         head->next = n;
         mp[n->key] = n;
     }
+    
+    // remove the node 
     void remove(Node * n)
     {
         n->prev->next = n->next;
         n->next->prev = n->prev;
         return;
     }
+    
+    // remove the last node
     void removeLast()
     {
         if(tail->prev==head)
@@ -36,6 +45,7 @@ public:
         mp.erase(tail->prev->key);
         remove(tail->prev);
     }
+    
     // print all elements of the cache (i.e., map) in order
     void printNode(int key=-1, int value=-1)
     {
@@ -47,6 +57,7 @@ public:
         cout<<"end print"<<endl;
     }
 
+    // print the linked list
     void printSimple(int key=-1, int value = -1)
     {
         if(value == -1)
@@ -59,6 +70,8 @@ public:
         }
         cout<<endl;
     }
+    
+    // print the hash
     void printMap(int key=-1, int value=-1)
     {
         cout<<"begin print after insert key = "<<key<<" and value = "<<value<<endl;
@@ -68,6 +81,8 @@ public:
         }
         cout<<"end print"<<endl;
     }
+    
+    // constructor
     LRUCache(int capacity) {
         cp = capacity;
         head = new Node(0,0);
