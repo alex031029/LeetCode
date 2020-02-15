@@ -1,8 +1,11 @@
 # lvalue and rvalue
 
-左值与右值。基本上来说就是=左边的值跟右边的值。
+左值与右值。基本上来说就是=左边的值跟右边的值。C++更分为左值、纯右值与将亡值。
 
 https://zhuanlan.zhihu.com/p/55856487
+
+https://www.cnblogs.com/zpcdbky/p/5275959.html
+
 
 ## lvalue
 
@@ -13,6 +16,10 @@ https://zhuanlan.zhihu.com/p/55856487
 在内存中临时保留的值。比如函数的返回值，a+b这样的表达式，一个常数10之类的都是右值。
 
 rvalue只能出现在=右边，同时rvalue没有一个变量名。
+
+## xvalue
+
+将亡值，expiring value。这个值是由纯右值引用引发的概念。
 
 # & and &&
 
