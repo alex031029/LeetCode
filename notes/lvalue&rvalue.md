@@ -51,7 +51,17 @@ rvalue只能出现在=右边，同时rvalue没有一个变量名。
     X x;
     std::move(x);
     
-这里的lvalue的x被强制转换为X类型下的rvalue(更准确的说是xvalue)。
+这里的lvalue的x被强制转换为X类型下的rvalue(更准确的说是xvalue)。在这个情况下，如果我们知道某个lvalue没有用了的话，就可以利用move来废物利用，让它转换成xvalue从而被废物利用一次。比如：
+
+    template<class T>
+    void swap(T& var1, T& var2){
+        T tmp = std::move(var1); //调用移动构造函数
+        var1 = std::move(var2); //调用operator=(T&&)
+        var2 = std::move(tmp); //调用operator=(T&&)
+    }
+
+
+注意：这里的=与一般的赋值等号并不相同，在vector中额外描述了`operator=(vector&& _right)`是怎么实现的。
 
 move同样可以接受rvalue，就是讲输入的rvalue原样返回。
 
@@ -62,4 +72,4 @@ move同样可以接受rvalue，就是讲输入的rvalue原样返回。
     
 Y可以是X的基类，或者基类的引用，或者X，或者X的引用。如果Y是lvalue，那x就被被转换成lvalue，否则就会被转换成xvalue。
 
-x可以是rvalue，前提是Y不能是lvalue。即rvalue不能变成lvalue，
+x可以是rvalue，前提是Y不能是lvalue。即rvalue不能变成lvalue，但是lvalue可以变成rvalue。
