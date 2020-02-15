@@ -28,10 +28,10 @@ Example 2:
         }
     };
  
-   int main()
-   {
-    foo * b = new foo[3]{{1,2},{3,4},{5,6}};
-    b[2].print();
-    delete [] b;
-    return 0;
-    }
+    int main()
+    {
+        foo * b = new foo[3]{{1,2},{3,4},{5,6}};
+        b[2].print();
+        delete [] b;
+        return 0;
+     }
