@@ -1,7 +1,4 @@
-// this file cannot pass all test cases
-
 class LRUCache {
-    // a struct of node
     struct Node{
         Node* next;
         Node* prev;
@@ -11,60 +8,27 @@ class LRUCache {
         Node(int k, int val):prev(NULL),next(NULL),key(k),value(val){};
     };
     
+
 public:
    map<int,Node*> mp; //map the key to the node in the linked list
    int cp;  //capacity
    Node* tail; // double linked list tail pointer
    Node* head; // double linked list head pointer
-    // the key of the first value of the linked map;
-    int first = -1;
-    // retrieve the last node of the cache;
-    
-    // obselete functions
-    Node * lastNode()
-    {
-        if(first == -1)
-        {
-            return NULL;
-        }
-        Node * ret = mp[first];
-        while(1)
-        {
-            if(ret->next==NULL)
-                break;
-            ret = ret->next;
-        }
-        return ret;
-    }
-    // retrieve the first node of the cache;
 
-    Node * firstNode()
-    {
-        if(first == -1)
-            return NULL;
-        return mp[first];
-    }
-  
-    // add a number in the first position
     void addFirst(Node * n)
     {
         n->next = head->next;
         n->prev = head;
         head->next->prev = n;
         head->next = n;
-        first = n->key;
         mp[n->key] = n;
     }
-    
-    // remove a number
     void remove(Node * n)
     {
         n->prev->next = n->next;
         n->next->prev = n->prev;
         return;
     }
-    
-    // remove the last number
     void removeLast()
     {
         if(tail->prev==head)
@@ -75,20 +39,26 @@ public:
     // print all elements of the cache (i.e., map) in order
     void printNode(int key=-1, int value=-1)
     {
-        if(first == -1)
-        {
-            cout<<"empty map"<<endl;
-            return;
-        }
-        Node * pt = mp[first];
         cout<<"begin print after insert key = "<<key<<" and value = "<<value<<endl;
-        for(pt = head->next;pt!=tail;pt=pt->next)
+        for(Node * pt = head->next;pt!=tail;pt=pt->next)
         {
             cout<<pt->key<<"\t"<<pt->value<<endl;
         }
         cout<<"end print"<<endl;
     }
-    // print all elements in the map
+
+    void printSimple(int key=-1, int value = -1)
+    {
+        if(value == -1)
+            cout<<"get key ("<<key<<")\t";
+        else   
+            cout<<"put key ("<<key<<")\t";
+        for(Node * pt = head->next;pt!=tail;pt=pt->next)
+        {
+            cout<<pt->key<<"\t";
+        }
+        cout<<endl;
+    }
     void printMap(int key=-1, int value=-1)
     {
         cout<<"begin print after insert key = "<<key<<" and value = "<<value<<endl;
@@ -113,25 +83,20 @@ public:
         {
             if(cp == 1)
                 return mp[key]->value;
-            if(first!=key)
+            Node * n =mp[key];
+            if(head->next!= n)
             {
-                // firstNode()->prev = mp[key];
-                // (mp[key]->prev)->next = mp[key]->next;
-                // mp[key]->next = firstNode();
-                // mp[key]->prev = NULL;
-                // first = key;
                 Node * temp = new Node(key, mp[key]->value);
                 remove(mp[key]);
-                addFirst(temp);
-                
+                addFirst(temp);               
             }
-            printNode(key);
+            // printNode(key);
+            // printSimple(key);
             return mp[key]->value;
         }
     }
     
     void put(int key, int value) {
-        // case 0: a trivial LRU cache with cp==1
         if(cp == 1)
         {
             mp.clear();
@@ -143,56 +108,43 @@ public:
         if(mp.empty())
         {
             Node * temp = new Node(head, tail, key, value);
-            // mp[key]=temp;
-            // first = key;
             addFirst(temp);
         }
         // case 2: the map still have vacancy;
         else if(mp.size()<cp)
         {
-            // Node * next = firstNode();
-            Node * temp = new Node(key, value);
-            // next->prev = temp;
-            // mp[key]=temp;
-            addFirst(temp);
-            first = key;
+            if(mp.find(key)==mp.end())
+            {            
+                Node * temp = new Node(key, value);
+                addFirst(temp);
+            }
+            else
+            {
+                Node * temp = new Node(key, value);
+                remove(mp[key]);
+                addFirst(temp);
+            }
         }
         // case 3: no more vacancy in the map
         else
         {
             // case 3.1: the element is new
-            if(get(key)==-1)
+            if(mp.find(key)==mp.end())
             {
-                // Node * last = lastNode();
-                // last->prev->next = NULL;
-                // mp.erase(last->key);
-                // Node * next = firstNode();
                 Node * temp = new Node(key, value);
-                // next->prev = temp;
-                // mp[key]=temp;
-                // first =key;
                 removeLast();
                 addFirst(temp);
             }
             // case 3.2: the element exists in the map
             else
             {
-                if(first!=key)
-                {
-                    // firstNode()->prev = mp[key];
-                    // (mp[key]->prev)->next = mp[key]->next;
-                    // mp[key]->next = firstNode();
-                    // first = key;
-                    Node * temp = new Node(key, value);
-                    remove(mp[key]);
-                    addFirst(temp);
-                    // mp[key] = temp;
-                }
-                else
-                    mp[key]->value = value;
+                Node * temp = new Node(key, value);
+                remove(mp[key]);
+                addFirst(temp);
             }
         }
-        printNode(key, value);
+        // printNode(key, value);
+        // printSimple(key, value);
         
     }
 };
