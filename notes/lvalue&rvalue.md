@@ -41,3 +41,25 @@ rvalue只能出现在=右边，同时rvalue没有一个变量名。
     auto&        => will only bind to modifiable lvalues
     const auto&  => will bind to anything but make it const, giving us const_iterator
     const auto&& => will bind only to rvalues
+
+# Move and Forward
+
+本质上都是强制类型转换（cast）
+
+## Move
+
+    X x;
+    std::move(x);
+    
+这里的lvalue的x被强制转换为X类型下的rvalue(更准确的说是xvalue)。
+
+move同样可以接受rvalue，就是讲输入的rvalue原样返回。
+
+## Forward
+
+    X x;
+    std::forward<Y>(x);
+    
+Y可以是X的基类，或者基类的引用，或者X，或者X的引用。如果Y是lvalue，那x就被被转换成lvalue，否则就会被转换成xvalue。
+
+x可以是rvalue，前提是Y不能是lvalue。即rvalue不能变成lvalue，
