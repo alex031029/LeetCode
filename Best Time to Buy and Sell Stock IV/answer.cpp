@@ -1,8 +1,10 @@
 // a DP solution
+// the universal solution for the seris of Best Time to Buy and Sell Stock questions 
 
 class Solution {
 public:
     // the case when k is very large
+    // the code is same as Best Time to Buy and Sell Stock II
     int maxProfitInfinity(vector<int>& prices) {
         if(prices.size()<2)
             return 0;
