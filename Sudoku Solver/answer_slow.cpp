@@ -30,7 +30,7 @@ public:
     // a dfs helper
     bool helper(vector<vector<char>>& board, int x, int y) {
        
-        // find the first blanket from (i,j)
+        // find the first blank from (i,j)
         while(board[x][y]!='.')
         {
             if (++y >= 9) {
