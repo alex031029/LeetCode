@@ -14,13 +14,17 @@ int solution(string &S) {
     {
         long long cnt = 1;
         int j = i;
+        
+        // find the number of conseuctive numbers same as S[i]
         for(j=i+1;j<S.size();j++)
         {
             if(S[j]!=S[i])
                 break;
             cnt++;
         }
-        // i = j fails on cases like aaabbb
+        
+        // i = j fails on cases like aaabbb 
+        // since in this case aabbba should be the correct one with returned value as 2
         i=j-1;
         ret+= cnt/3;
         // cout<<ret<<endl;
