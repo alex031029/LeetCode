@@ -1,7 +1,7 @@
-Given an arry A with positve and negativ integers, and a positive integer M.
+Given an array A with positve and negative integers, and a positive integer M.
 A subset of A is called M-aligned if all pairs of numbers in this subset satisfying:
 
-   abs(A[i]-A[j]) mod M == 0
+    abs(A[i]-A[j]) mod M == 0
    
 The question asks the largest size of M-aligend subset of A.
 
