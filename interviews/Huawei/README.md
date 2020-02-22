@@ -16,7 +16,8 @@ The only trick is that both `low` and `high` can be pretty large! Thus, I used `
     
 ## Q2
 
-Given an string, convert all capital letters to small letters, and convert spaces to 0s.
+Given an string, convert all capital letters to small letters, and convert spaces to 0s. 
+Then reverse the string and output it.
 
 The only trick is that this string contains space. 
 Thus, we need to use `getline(cin, input)` instead of regular `cin>>input`.
