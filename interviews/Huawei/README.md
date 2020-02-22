@@ -2,7 +2,8 @@
 
 ## Q1
 
-For all prime numbers in the range [low, high), we calculate the sum of the units digits and the tens digitt. Output the smaller one。
+For all prime numbers in the range `[low, high)`, we calculate the sum of the units digit and the tens digit, respectively. 
+Output the smaller one。
 
 Example:
 
@@ -11,7 +12,7 @@ Example:
     explanation:
     The prime numbers are 151 and 157. Thus, the tens digit is 5+5=10, units digit is 1+7=8
     
-The only trick is that both low and high can be pretty large! Thus, I used `unsigned long long` for all integers involved in the code.    
+The only trick is that both `low` and `high` can be pretty large! Thus, I used `unsigned long long` for all integers involved in the code.    
     
 ## Q2
 
