@@ -12,8 +12,10 @@
 class BSTIterator {
 public:
     int index = 0;
-
+    // a vector store the inorder of the tree
     vector<int> inorder;
+    
+    // inorder traverse the tree
     void helper(TreeNode* root)
     {
         if(root==NULL)
