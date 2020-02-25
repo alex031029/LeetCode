@@ -21,3 +21,12 @@ Then reverse the string and output it.
 
 The only trick is that this string contains space. 
 Thus, we need to use `getline(cin, input)` instead of regular `cin>>input`.
+
+# Second Round
+
+Personality test. These are traits Huawei do not like:
+
+* Easily become depressed or anxious
+* Love to stay alone
+* Inconsistent answers of similar questions 
+
