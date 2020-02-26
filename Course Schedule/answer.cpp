@@ -19,8 +19,8 @@ public:
         // initialize inDegree and outNeighbors
         for(int i=0;i<prerequisites.size();i++)
         {
-            inDegree[prerequisites[i][1]]++;
-            outNeighbors[prerequisites[i][0]].push_back(prerequisites[i][1]);
+            inDegree[prerequisites[i][0]]++;
+            outNeighbors[prerequisites[i][1]].push_back(prerequisites[i][0]);
         }
         
         // initialize zeroInDegree
