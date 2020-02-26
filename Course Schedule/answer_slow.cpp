@@ -31,7 +31,7 @@ public:
         vector<vector<int>> inDegree(numCourses);
         for(int i=0;i<prerequisites.size();i++)
         {
-            inDegree[prerequisites[i][1]].push_back(prerequisites[i][0]);
+            inDegree[prerequisites[i][0]].push_back(prerequisites[i][1]);
         }
         
         // a deleted function to record if it has been deleted
