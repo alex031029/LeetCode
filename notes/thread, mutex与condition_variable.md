@@ -63,6 +63,6 @@ http://jakascorner.com/blog/2016/02/lock_guard-and-unique_lock.html
 
 ## unique_lock
 
-# conditional_variable
+# condition_variable
 
 感觉跟go的channel比较像，跟unique_lock配套使用
