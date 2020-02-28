@@ -65,4 +65,7 @@ http://jakascorner.com/blog/2016/02/lock_guard-and-unique_lock.html
 
 # condition_variable
 
-感觉跟go的channel比较像，跟unique_lock配套使用
+感觉跟go的channel比较像，跟unique_lock配套使用。
+
+同时需要提防Spurious wakeup。即condition_variable::wait()过程中也可能被唤醒，即使根本没有其他线程通知。
+可以看 Print In Order/answer.cpp
