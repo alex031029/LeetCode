@@ -1,4 +1,6 @@
 // 给定一个数组a[0, n-1]，如果相邻的元素不能同时入选，如何选择一个和最大的子数组并返回他们的和？
+// 与Leetcode上的 House Robber题目完全一致。
+
 
 #include<iostream>
 #include<vector>
