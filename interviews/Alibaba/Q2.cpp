@@ -81,14 +81,24 @@ node * helper(int k)
 	return root;
 }
 
+int helper2(int k)
+{
+	if(k==1)
+		return 0;
+	if(k==2)
+		return 5;
+	return helper2(k-2)*5+helper2(k-1)*4;
+}
 int main()
 {
 	auto root = helper(10);
 	cout<<ret<<endl;
+	cout<<helper2(10)<<endl;
 	for(int i=1;i<=10;i++)
 	{
 		ret=0;
 		helper(i);
-		cout<<ret<<endl;
+		int ret2 = helper2(i);
+		cout<<ret<<"\t"<<ret2<<endl;
 	}
 }
