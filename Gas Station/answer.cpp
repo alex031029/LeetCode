@@ -1,6 +1,7 @@
 // O(n) solution
 // similar to naive implementation
 // but it has optimization
+// the optimization is to examine each gas station only once
 
 class Solution {
 public:
