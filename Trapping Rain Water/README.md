@@ -5,8 +5,8 @@ The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In th
 
 Example:
 
-Input: [0,1,0,2,1,0,1,3,2,1,2,1]
-Output: 6
+    Input: [0,1,0,2,1,0,1,3,2,1,2,1]
+    Output: 6
 
 
 来源：力扣（LeetCode）
