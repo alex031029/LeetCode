@@ -2,13 +2,13 @@ Given a string s, find the longest palindromic substring in s. You may assume th
 
 Example 1:
 
-Input: "babad"
-Output: "bab"
-Note: "aba" is also a valid answer.
+    Input: "babad"
+    Output: "bab"
+    Note: "aba" is also a valid answer.
 Example 2:
 
-Input: "cbbd"
-Output: "bb"
+    Input: "cbbd"
+    Output: "bb"
 
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/longest-palindromic-substring
