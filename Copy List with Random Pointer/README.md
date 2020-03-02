@@ -11,31 +11,31 @@ random_index: the index of the node (range from 0 to n-1) where random pointer p
 Example 1:
 
 
-Input: head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
-Output: [[7,null],[13,0],[11,4],[10,2],[1,0]]
+    Input: head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
+    Output: [[7,null],[13,0],[11,4],[10,2],[1,0]]
 Example 2:
 
 
-Input: head = [[1,1],[2,1]]
-Output: [[1,1],[2,1]]
+    Input: head = [[1,1],[2,1]]
+    Output: [[1,1],[2,1]]
 Example 3:
 
 
 
-Input: head = [[3,null],[3,0],[3,null]]
-Output: [[3,null],[3,0],[3,null]]
+    Input: head = [[3,null],[3,0],[3,null]]
+    Output: [[3,null],[3,0],[3,null]]
 Example 4:
 
-Input: head = []
-Output: []
-Explanation: Given linked list is empty (null pointer), so return null.
- 
+    Input: head = []
+    Output: []
+    Explanation: Given linked list is empty (null pointer), so return null.
+
 
 Constraints:
 
--10000 <= Node.val <= 10000
-Node.random is null or pointing to a node in the linked list.
-Number of Nodes will not exceed 1000.
+* -10000 <= Node.val <= 10000
+* Node.random is null or pointing to a node in the linked list.
+* Number of Nodes will not exceed 1000.
 
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/copy-list-with-random-pointer
