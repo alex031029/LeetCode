@@ -7,4 +7,4 @@ Given a string of words, find out the number of words
 Some examples:
 
       // abc ab!c !!!abc!!!def!!!ghi!!! ! !xyz! gh!!i gh!i   g!h!i 
-      // 1    1         3    			  	  0    1     2    1       2 
+      // 1    1         3               0    1     2    1       2 
