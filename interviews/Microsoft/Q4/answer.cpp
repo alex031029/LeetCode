@@ -3,10 +3,10 @@
 struct Node
 {
 	char c; // unnecessary; can be removed
-  // next can be based on 2~9 instead of letters
+  	// next can be based on 2~9 instead of letters
 	// vector<Node*> next(26);
 	vector<Node*> next2(8);
-  // a list of Chinese characters
+ 	// a list of Chinese characters
 	vector<string> characters;
 	bool end;
 	Node(char& x);c(x),end(false){
