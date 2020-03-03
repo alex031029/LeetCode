@@ -8,6 +8,7 @@ And then read line by line: "PAHNAPLSIIGYIR"
 Write the code that will take a string and make this conversion given a number of rows:
 
 string convert(string s, int numRows);
+
 Example 1:
 
     Input: s = "PAYPALISHIRING", numRows = 3
