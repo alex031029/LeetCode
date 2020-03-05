@@ -1,3 +1,6 @@
+// 找到两个字符串的最大公因子串
+
+
 #include<iostream>
 #include<string>
 
