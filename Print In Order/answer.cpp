@@ -31,8 +31,9 @@ public:
         
         // when readyTwo is true, and cond is notifiied
         // cond.wait() will automaticall unlock mtx if sencond() lock mtx before first()
-        while(!readyTwo)
-            cond.wait(lock);
+//         while(!readyTwo)
+//             cond.wait(lock);
+        cond.wait(lock, [&](){return readyTwo;}); // better way to use cond
         // printSecond() outputs "second". Do not change or remove this line.
         printSecond();
         readyThree = true;
@@ -41,8 +42,9 @@ public:
 
     void third(function<void()> printThird) {
         unique_lock<mutex> lock(mtx);
-        while(!readyThree)
-            cond.wait(lock);
+//         while(!readyThree)
+//             cond.wait(lock);
+        cond.wait(lock, [&](){return readyThree;});
         // printThird() outputs "third". Do not change or remove this line.
         printThird();
     }
