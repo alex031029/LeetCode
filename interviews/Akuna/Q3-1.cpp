@@ -1,14 +1,15 @@
 // design a event_timer
 
-event_timer e;
-e.add_events(4, [](){ cout << "a" << end;});
-e.add_events(1, [](){ cout << "b" << end;});
-string info = "hello";
-e.add_events(10, [=](){cout << info; })
+// an example of event_timer execution
+// event_timer e;
+// e.add_events(4, [](){ cout << "a" << end;});
+// e.add_events(1, [](){ cout << "b" << end;});
+// string info = "hello";
+// e.add_events(10, [=](){cout << info; })
 
-e.run_events(); // nothing
-sleep(3);
-e.run_events()b; // print b 
+// e.run_events(); // nothing
+// sleep(3);
+// e.run_events()b; // print b 
 
 class event_timer
 {
