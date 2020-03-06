@@ -1,32 +1,33 @@
 // designa pid manager
 
+// example:
 
-class PidManager
-{
-public: 
-    int create(int pid); // return the new pid just been created
-    vector<int> kill(int pid); // return all pids been killed
-    bool exists(int pid) const;
-};
+// class PidManager
+// {
+// public: 
+//     int create(int pid); // return the new pid just been created
+//     vector<int> kill(int pid); // return all pids been killed
+//     bool exists(int pid) const;
+// };
 
 
-PidManager m;
+// PidManager m;
 
-m.exists(0); // true
+// m.exists(0); // true
 
-int a = m.create(0);
-int b = m.create(a);
-int c = m.create(a);
-int d = m.create(b);
+// int a = m.create(0);
+// int b = m.create(a);
+// int c = m.create(a);
+// int d = m.create(b);
 
-m.exists(c); // true
+// m.exists(c); // true
 
-auto killed = m.kill(a);
+// auto killed = m.kill(a);
 
-// killed == {a, b, c}
-// killed == {a,b,c,d}
-m.exists(0) // true
-// m contains only pid "0" now
+// // killed == {a, b, c}
+// // killed == {a,b,c,d}
+// m.exists(0) // true
+// // m contains only pid "0" now
 
 
 
