@@ -62,6 +62,25 @@ bool ifContain(Node * root, vector<int>& arr)
     return true;
 }
 
+void dfs(Node * root, vector<int>& arr, int& offset, bool& flag)
+{
+    // cout<<arr[offset]<<"\t"<<root->val<<"\t"<<flag<<endl;
+    if(offset >= arr.size())
+        return;
+    if(root->left!=NULL)
+        dfs(root->left, arr, offset, flag);
+    if(offset >= arr.size())
+          return;
+    if(arr[offset]==root->val)
+        offset++;
+    else if(arr[offset]<root->val)
+        flag = false;
+    if(offset >= arr.size())
+          return;
+    if(root->right!=NULL)
+        dfs(root->right, arr, offset, flag);
+}
+
 Node * init()
 {
     // vector<int> tree = {8,3,10,1,6,-1,14,-1,-1,4,7,-1,-1,13,-1};
@@ -81,9 +100,12 @@ Node * init()
 }
 int main()
 {
-    vector<int> arr = {1,6,10,12};
+    vector<int> arr = {1,6,10,13};
     Node * root = init();
     cout <<ifContain(root, arr)<< endl;
+    bool flag = true;
+    int offset = 0;
+    dfs(root, arr, offset, flag);
+    cout<<flag<<endl;
     return 0;
 }
-
