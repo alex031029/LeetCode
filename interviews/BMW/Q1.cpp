@@ -1,3 +1,6 @@
+// examine if an sorted array in included in a binary search tree;
+
+
 /************************************************
                                                   8
                                            /           \
@@ -25,6 +28,8 @@ struct Node
 };
 
 vector<int> inOrder;
+
+// a in-order dfs to traverse the binary search tree
 void dfs(Node * root)
 {
     if(root->left!=NULL)
@@ -62,6 +67,7 @@ bool ifContain(Node * root, vector<int>& arr)
     return true;
 }
 
+// a dfs search without incurring extra space overheads
 void dfs(Node * root, vector<int>& arr, int& offset, bool& flag)
 {
     // cout<<arr[offset]<<"\t"<<root->val<<"\t"<<flag<<endl;
@@ -81,6 +87,7 @@ void dfs(Node * root, vector<int>& arr, int& offset, bool& flag)
         dfs(root->right, arr, offset, flag);
 }
 
+// initialize the tree;
 Node * init()
 {
     // vector<int> tree = {8,3,10,1,6,-1,14,-1,-1,4,7,-1,-1,13,-1};
@@ -102,7 +109,10 @@ int main()
 {
     vector<int> arr = {1,6,10,13};
     Node * root = init();
+    // first method
     cout <<ifContain(root, arr)<< endl;
+  
+    // second method
     bool flag = true;
     int offset = 0;
     dfs(root, arr, offset, flag);
