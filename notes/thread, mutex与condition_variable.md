@@ -63,12 +63,21 @@ http://jakascorner.com/blog/2016/02/lock_guard-and-unique_lock.html
 
 ## unique_lock
 
+与lock_guard类似，但是不会要求强制在构造的时候加锁，以及析构的时候解锁。
+与condition_variable配合使用。
+
 # condition_variable
 
 感觉跟go的channel比较像，跟unique_lock配套使用。
 
 同时需要提防Spurious wakeup。即condition_variable::wait()过程中也可能被唤醒，即使根本没有其他线程通知。
 可以看 Print In Order/answer.cpp
+
+wait(lock, pred)函数会自动解锁lock，挂起线程，直至需要的条件（第二个参数pred）满足。此时不再阻塞线程，获取lock，并重新加锁。
+wait_for(lock, time, pred)，如果time到了也会自动退出wait。
+
+notify_all()告诉所有的线程。
+notify_one()告诉随机一个线程。
 
 # Work Stealing
 
