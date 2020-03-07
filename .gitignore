@@ -1,1 +1,5 @@
-.DS_Store
+*
+!*.c
+!*.cpp
+!*.py
+!*.md
