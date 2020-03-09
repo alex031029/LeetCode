@@ -15,7 +15,7 @@ class event_timer
 {
 	// long long timer;
 	priority_queue<pair<long long, void *>> events;
-	multiset<>
+	// multiset<pair<long long, void*>> events // using multiset is also okay
 	// queue<void *> pendings;
 	
 	void add_event(long long time, void * func)
