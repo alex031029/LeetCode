@@ -15,9 +15,10 @@ void helper(Node * root, int& x)
 	{
 		if(root->left==NULL)
 			root->left = new Node(x);
-		else{
+		else
+		{
 			helper(root->left, x);
-	}
+		}
 	}
 	else
 	{
