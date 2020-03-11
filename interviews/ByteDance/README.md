@@ -41,4 +41,4 @@ Again, discussion of each of these points have filled countless pages; take this
 2. 尽量同时id1扣钱与id2加钱。
 
 我的思路：
-每个id本身维护一个写锁。为了
+每个id本身维护一个写锁。为了防止出现互锁而出现死锁，每个线程会率先锁id1与id2中编号更小的。如果只能获得编号更大的id 的锁，我们则释放这个锁，保证不会死锁。这个思路与哲学家吃面相关。奇偶性同样是一个可行性的操作。
