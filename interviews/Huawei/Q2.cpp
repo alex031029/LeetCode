@@ -1,3 +1,8 @@
+// given the number of node n and the heigh of a tree h
+// output the number of distinct trees satisfying n and h
+// here I consider a tree with height less than h is not counted 
+
+
 #include<iostream>
 #include<vector>
 
