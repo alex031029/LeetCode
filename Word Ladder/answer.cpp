@@ -1,4 +1,4 @@
-// an improved version of answer_very_slow.cpp
+// an improved version of answer_TLE.cpp
 // it is also a BFS solution
 // a hash is set up to accelereate the process of find all modifiable words
 
