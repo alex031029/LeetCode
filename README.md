@@ -2,7 +2,7 @@
 
 I sync some (not all) LeetCode and HackerRank questions I have done into this repo. 
 
-possible answer files:
+**Possible answer files:**
 
 * answer.cpp: normal accepted answer with at least not bad time complexity 
 * answer_slow.cpp: an accepted answer with either a theoretically or pratically slow performance
