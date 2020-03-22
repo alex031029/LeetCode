@@ -1,5 +1,6 @@
 // an O(n log n) solution
 // using sort
+// there exists O(n) solution
 
 class Solution {
 public:
@@ -12,7 +13,7 @@ public:
         // cout<<endl;
         int ret = 0;
 
-
+        // augument a[i] to a[i-1]+1 if necessary
         for(int i=1;i<A.size();i++)
         {
             if(A[i]<=A[i-1])
