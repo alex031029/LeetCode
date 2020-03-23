@@ -10,6 +10,7 @@
 
 * Akuna (failed at the last round)
 * Microsoft (1st attempt; failed at the last round)
+* Jaguar Land Rover (failed at the last round; very poor connection quality. I could barely understand what the interviewer said!)
 
 # Suspended:
 
