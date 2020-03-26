@@ -1,0 +1,32 @@
+// using hash and std::gcd algorithm
+// it works, but rather slow
+
+
+class Solution {
+public:
+    bool hasGroupsSizeX(vector<int>& deck) {
+        if(deck.size()<=1)
+            return false;
+        
+        // a hash to count the frequency of each integer
+        map<int,int> hash;
+        for(int i=0;i<deck.size();i++)
+        {
+            hash[deck[i]]++;
+        }
+        int X = hash.begin()->second;
+        for(auto iter = hash.begin();iter!=hash.end();iter++)
+        {
+            // X is the greatest common factor off all hash values
+            X = gcd(X, iter->second);
+            // cout<<X<<endl;
+        }
+        // cout<<X;
+        
+        // return true if X is no less than 2
+        if(X>=2)
+            return true;
+        else
+            return false;
+    }
+};
