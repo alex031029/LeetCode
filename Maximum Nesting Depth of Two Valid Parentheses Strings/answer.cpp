@@ -7,17 +7,18 @@
 class Solution {
 public:
     vector<int> maxDepthAfterSplit(string seq) {
+        // a counter to record the number of ( we have met
         int d = 0;
-        vector<int> ans;
+        vector<int> ret;
         for (char& c : seq)
             if (c == '(') {
                 ++d;
-                ans.push_back(d % 2);
+                ret.push_back(d % 2);
             }
             else {
-                ans.push_back(d % 2);
+                ret.push_back(d % 2);
                 --d;
             }
-        return ans;
+        return ret;
     }
 };
