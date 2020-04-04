@@ -8,6 +8,7 @@ struct Node {
 
     Node(int _cnt, int _time, int _key, int _value):cnt(_cnt), time(_time), key(_key), value(_value){}
     
+    // overload < operator 
     bool operator < (const Node& rhs) const {
         return cnt == rhs.cnt ? time < rhs.time : cnt < rhs.cnt;
     }
