@@ -2,6 +2,10 @@
 
 I sync some (not all) LeetCode and HackerRank questions I have done into this repo. 
 
+I mainly implement questions in C++. In rare cases, I do code it in C, which happens when I think stl is not necessary in these particular question. 
+
+In addition, as I am practicing Java, I am also trying to answer some questions in Java. Just bare my naive Java implementaion.
+
 **Possible answer files:**
 
 * answer.cpp: a normal accepted answer with at least not bad time complexity 
