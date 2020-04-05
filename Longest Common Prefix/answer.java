@@ -8,7 +8,7 @@ class Solution {
             return "";
         if(strs.length == 1)
             return strs[0];
-        String ret = "";
+
         int p = 0;
         // the size of String is length()
         while(p<strs[0].length())
@@ -19,12 +19,13 @@ class Solution {
                 // instead, we use charAt() function to retrieve a particular char 
                 if(p>=strs[i].length()||strs[i].charAt(p)!=strs[0].charAt(p))
                 {
-                    return ret;
+                    // return the substring
+                    return strs[0].substring(0,p);
                 }
             }
-            ret+=strs[0].charAt(p);
+            
             p++;
         }
-        return ret;
+        return strs[0];
     }
 }
