@@ -39,6 +39,11 @@ public:
                     else if (t1 > t2) 
                         hi = mid;
                     else 
+                        // it is the first time I see similar statement
+                        // it is euqal to the following two lines
+                        
+                        // hi = mid;
+                        // lo = hi;
                         lo = hi = mid;
                 }
 
