@@ -3,6 +3,7 @@
 
 public class Solution {
     public int MaxArea(int[] height) {
+        // note that methods in C# begin with a CAPITAL letter
         if(height.Length<2)
             return 0;
 
@@ -12,6 +13,7 @@ public class Solution {
         int ret = 0;
         while(right>left)
         {
+            // similar to min 
             int temp = Math.Min(height[left],height[right])*(right-left);
             if(temp>ret)
                 ret = temp;
