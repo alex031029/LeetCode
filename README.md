@@ -4,7 +4,7 @@ I sync some (not all) LeetCode and HackerRank questions I have done into this re
 
 I mainly implement questions in C++. In rare cases, I do code it in C, which happens when I think stl is not necessary in these particular question. 
 
-In addition, as I am practicing Java, I am also trying to answer some questions in Java. Just bare my naive Java implementaion.
+In addition, as I am practicing Java and C#, I am also trying to answer some questions in these two languages. Just bare my naive Java and C# implementaion.
 
 **Possible answer files:**
 
