@@ -27,11 +27,11 @@ public class Solution {
             List<int> nums2 = new List<int>(nums);
             nums2.RemoveAt(i);
             var result = Helper(nums2);
-            for(int j=0;j<result.Count();j++)
+            foreach(var r in result)
             {
                 List<int> temp = new List<int>();
                 temp.Add(nums[i]); 
-                temp.AddRange(result[j]);
+                temp.AddRange(r);
                 ret.Add(temp);
             } 
         }
