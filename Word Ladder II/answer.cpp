@@ -2,6 +2,9 @@
 // instead of keeping the number of shortest path, I also store the transformation sequence
 // this algorithm actually is somewhat slow 
 
+// UPDATE on 20200607: this answer is TLE today. 
+// I think LeetCode adjusted the time limit
+
 class Solution {
 public:
     // the boolean flag arry
