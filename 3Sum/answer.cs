@@ -4,7 +4,10 @@
 public class Solution {
     public IList<IList<int>> ThreeSum(int[] nums) {
         IList<IList<int>> ret = new List<IList<int>>();
-
+        
+        if(nums.Length<3)
+            return ret;
+        
         Array.Sort(nums);
               
         for(int i=0;i<nums.Length-2;i++)
