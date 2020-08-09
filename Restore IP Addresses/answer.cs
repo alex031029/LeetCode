@@ -14,13 +14,16 @@ public class Solution {
                     {
                         if(a+b+c+d!=s.Length)
                             continue;
-                        int s1 = Convert.ToInt32(s.Substring(0, a));
+			// Convert is necessary 
+			// otherwise LeetCode would raise an error
+			int s1 = Convert.ToInt32(s.Substring(0, a));
                         int s2 = Convert.ToInt32(s.Substring(a, b));
                         int s3 = Convert.ToInt32(s.Substring(a + b, c));
                         int s4 = Convert.ToInt32(s.Substring(a+b+c));
                         if(s1<=255&&s2<=255&&s3<=255&&s4<=255)
                         {
                             // it is to remove the meaning less 0 in the integers 
+			    // and similarly, Convert cannot be omitted
                             string ip = Convert.ToString(s1)+'.'+Convert.ToString(s2)+'.'+Convert.ToString(s3)+'.'+Convert.ToString(s4);
                             if(ip.Length == s.Length+3)
                                 ret.Add(ip);
